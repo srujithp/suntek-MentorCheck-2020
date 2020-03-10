@@ -5,21 +5,19 @@ Example 1:
 Input: [2,2,3,2]
 Output: 3 */
 
-import java.util.*;
-import java.io.*;
-public class OddOneOut {
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Enumeration;
+import java.util.Hashtable;
+import java.io.IOException;
 
-	public static void main(String[] args) throws IOException {
-		
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		System.out.println("Enter the numbers");
-		String str=br.readLine();
-		String[] nums= str.split(" ");
-		int n=(str.length()+1)/2;
-		for(int i=0;i<n;i++)
-		System.out.print(nums[i]+" ");
+public class SingleOne {
+	
+	static String oneElement(String[] nums)
+	{
 		Hashtable<String, Integer> h = new Hashtable<String, Integer>(); 
-		for(int i=0;i<n;i++)
+		int size=nums.length;
+		for(int i=0;i<size;i++)
 		{
 			if(h.get(nums[i])==null)
 					h.put(nums[i],1);
@@ -28,13 +26,25 @@ public class OddOneOut {
 				h.put(nums[i],h.get(nums[i])+1);
 			}
 		}
-		System.out.println();
+		
 		Enumeration enu = h.keys(); 
 		while (enu.hasMoreElements()) { 
+			
 			String str1=(String)enu.nextElement();
 			if(h.get(str1)==1)
-            System.out.println(str1); 
+				return str1;
         } 
+		return "0";
+	}
+
+	public static void main(String[] args) throws IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("Enter the numbers");
+		String line=br.readLine();
+		String[] str=line.split(" ");
+		System.out.println(oneElement(str));
+	
 	}
 
 }
