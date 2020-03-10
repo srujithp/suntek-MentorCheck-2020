@@ -40,7 +40,6 @@ public class SingleOne {
 	public static void main(String[] args) throws IOException {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		System.out.println("Enter the numbers");
 		String line=br.readLine();
 		String[] str=line.split(" ");
 		System.out.println(oneElement(str));
