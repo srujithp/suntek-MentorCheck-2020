@@ -16,7 +16,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Steps {
+public class StepsCount {
 
 	public static void main(String[] args) throws IOException {
 		
@@ -29,15 +29,33 @@ public class Steps {
 	
 	static int noOfSteps(int n)
 	{
-		if((n&1)==1)
-			n=n-1;
-		int c=0;
-		while(n!=1)
+		int n1=n,n2=n;
+		int c1=0,c2=0;
+		while(n1!=1)
 		{
-			n=n>>1;
-			c++;
+			if((n1&1)==1)
+			{
+				n1=n1-1;
+				c1++;
+				if(n1==1)
+					break;
+			}
+			n1=n1>>1;
+			c1++;
 		}
-		return c;
+		while(n2!=1)
+		{
+			if((n2&1)==1)
+			{
+				n2=n2+1;
+				c2++;
+				if(n2==1)
+					break;
+			}
+			n2=n2>>1;
+			c2++;
+		}
+		return Math.min(c1,c2);
 	}
-
+	
 }
