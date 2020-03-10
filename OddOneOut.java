@@ -11,7 +11,7 @@ import java.util.Enumeration;
 import java.util.Hashtable;
 import java.io.IOException;
 
-public class SingleOne {
+public class OddOneOut {
 	
 	static String oneElement(String[] nums)
 	{
