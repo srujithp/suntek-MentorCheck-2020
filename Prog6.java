@@ -11,7 +11,7 @@ import java.util.Enumeration;
 import java.util.Hashtable;
 import java.io.IOException;
 
-public class OddOneOut {
+public class Prog6 {
 	
 	static String oneElement(String[] nums)
 	{
