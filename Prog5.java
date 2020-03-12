@@ -1,3 +1,10 @@
+/* 5.Given a non negative integer number num. For every numbers i in the range 0 ≤ i ≤ num calculate the number of 1's in their binary representation and return them as an array.
+Example 1:
+Input: 2
+Output: [0,1,1]
+•	It is very easy to come up with a solution with run time O(n*sizeof(integer)). But can you do it in linear time O(n) /possibly in a single pass?
+•	Space complexity should be O(n). */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -9,7 +16,6 @@ public class Prog5 {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int num=Integer.parseInt(br.readLine());
-		//System.out.println(0&-1);
 		System.out.println(noOfOnes(num));
 		
 	}
